@@ -44,6 +44,23 @@
 
 // Newsletter RSS feed
 (function () {
+  // ── Newsletter feed config ──
+  // The Substack mixes How Mom AI posts and Orienting Field Notes posts, and the RSS
+  // carries no category or section to tell them apart. So we show ONLY the Field Notes
+  // issues listed here by slug (the part after /p/ in the post URL). When you publish a
+  // new Field Notes issue, add its slug to this array.
+  // Durable fix: move Field Notes to its own Substack and point NEWSLETTER_FEED_URL there,
+  // then empty this array to show everything on that feed.
+  var NEWSLETTER_FEED_URL = 'https://howmomai.substack.com/feed';
+  var FIELD_NOTES_SLUGS = [
+    'how-to-build-an-ai-brain-with-one'
+  ];
+
+  function slugFromLink(link) {
+    var m = /\/p\/([^\/?#]+)/.exec(link || '');
+    return m ? m[1] : '';
+  }
+
   function stripHtml(html) {
     var tmp = document.createElement('div');
     tmp.innerHTML = html;
@@ -53,16 +70,26 @@
   function loadFeed() {
     var container = document.getElementById('newsletterCards');
     if (!container) return;
-    var rssUrl = encodeURIComponent('https://howmomai.substack.com/feed');
+    var rssUrl = encodeURIComponent(NEWSLETTER_FEED_URL);
     fetch('https://api.rss2json.com/v1/api.json?rss_url=' + rssUrl)
       .then(function (res) { return res.json(); })
       .then(function (data) {
+        var section = document.getElementById('newsletter-feed');
         if (data.status !== 'ok' || !data.items || !data.items.length) {
-          var section = document.getElementById('newsletter-feed');
           if (section) section.style.display = 'none';
           return;
         }
-        container.innerHTML = data.items.map(function (item) {
+        var items = data.items;
+        if (FIELD_NOTES_SLUGS.length) {
+          items = items.filter(function (item) {
+            return FIELD_NOTES_SLUGS.indexOf(slugFromLink(item.link)) !== -1;
+          });
+        }
+        if (!items.length) {
+          if (section) section.style.display = 'none';
+          return;
+        }
+        container.innerHTML = items.map(function (item) {
           var date = new Date(item.pubDate).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
           var excerpt = stripHtml(item.description).slice(0, 100).trim() + '…';
           var img = item.thumbnail || (item.enclosure && item.enclosure.link) || '';

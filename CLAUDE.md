@@ -11,7 +11,22 @@ It is the de-gendered successor to How Mom AI (`howmomai.com`): same proven stat
 
 **Primary job: conversion.** Two paid offers sit front and center — a live **Workshop** and **1:1 Coaching** — backed by proof that she ships real products (`tax.orienting.lu`, `school.orienting.lu`). The newsletter is the low-friction "stay in touch" action.
 
-Positioning: a personal, credibility-first page, not a directory. It opens with Ting and her Amazon track record, then routes to the two offers.
+Positioning: a personal, credibility-first page, not a directory. It opens with Ting and her Amazon track record, then routes to the offers.
+
+### The spine and the ladder (locked)
+The through-line across everything: **"I think like a product manager, and I make AI build it."** Ten years as a Sr PM at Amazon is the moat – it's product judgment, which no prompt-hustler or bootcamp grad can fake. Every offer sits under that spine.
+
+The three angles are not alternatives; they are altitudes on one ladder:
+1. **Work smarter with AI** (automate a task that eats your week) – entry wedge, widest funnel, easiest yes. Top of funnel.
+2. **Build products end to end** (make the thing yourself, solo) – core promise, the flagship workshop.
+3. **Become an AI PM** (think and build like one) – premium transformation, highest willingness to pay, the natural home for 1:1 Coaching (career change is a 1:1 job).
+
+Homepage **leads with the PM-who-builds spine** (decided by Ting). The ladder maps onto the offers block.
+
+### Hero message (locked)
+> I came from Taiwan and I build in Europe. I spent ten years as a product manager at Amazon and never wrote a line of code. Now I build products end to end myself, with AI, and I teach you to do the same.
+
+中文 hero carries the same meaning in Ting's voice, opening on 「找到你的方向」 as the tagline.
 
 ---
 
