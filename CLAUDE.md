@@ -76,13 +76,30 @@ Reuse from How Mom AI wholesale: `script.js` (cookie gate + Substack RSS + hambu
 
 | Thing | URL |
 |---|---|
-| Domain | https://orienting.lu |
+| Domain (target, DNS pending) | https://orienting.lu |
+| Live deploy | https://orienting-lu.vercel.app |
+| Vercel project | tings-projects-447d45ab/orienting-lu |
 | Workshop (EN CTA) | https://maven.com/ting/build-your-second-brain |
 | Workshop (中文 CTA) | TBD — Chinese Maven course not set up yet; points to build-your-second-brain until it exists |
-| Coaching booking | TBD — no link yet; ship placeholder (newsletter capture / mailto / Google Form) |
-| Newsletter feed | https://howmomai.substack.com/feed *(under review — may move to a dedicated Orienting Substack)* |
-| Products (proof) | https://tax.orienting.lu · https://school.orienting.lu |
+| Coaching booking | hi@orienting.lu (mailto placeholder) — TBD real booking link |
+| Newsletter feed | https://howmomai.substack.com/feed, filtered to Field Notes issues only via a slug allowlist in script.js (no category marker exists in the feed to filter automatically) |
+| Products (proof) | https://tax.orienting.lu (Railway) · https://school.orienting.lu (Vercel, separate project `lux-school-calendar`) |
 | Template site | ~/Desktop/howmomai |
+
+---
+
+## Deploy status
+
+Deployed via Vercel CLI directly (not yet via GitHub — see Open items). Live now at the `.vercel.app` URL above.
+
+`orienting.lu` and `www.orienting.lu` are attached to this Vercel project, but **DNS is not yet pointed at Vercel** — the domain is registered through a third party (EuroDNS), and its current nameservers/records don't resolve to Vercel. The root domain will not go live until Ting adds this DNS record at the registrar:
+
+```
+A    orienting.lu    76.76.21.21
+A    www.orienting.lu    76.76.21.21
+```
+
+(This mirrors how `school.orienting.lu` already resolves to Vercel today — same pattern, one more record.)
 
 ---
 
@@ -100,9 +117,11 @@ Reuse from How Mom AI wholesale: `script.js` (cookie gate + Substack RSS + hambu
 
 ---
 
-## Open items (confirm before deploy)
+## Open items
 
-- Newsletter feed source: howmomai Substack vs a dedicated Orienting Substack (mom-framed titles would surface on a de-mom'd site).
-- Coaching booking link (real form to replace the placeholder).
+- **DNS**: add the `A` records above at the registrar (EuroDNS) to make `orienting.lu` live — the one step only Ting can do.
+- **GitHub repo**: not yet created. Current deploy is a direct Vercel CLI push (`vercel deploy`), not the GitHub-linked auto-deploy-on-push setup How Mom AI uses. Create `tingwang-tech/orienting-lu` on GitHub, then connect it in the Vercel project settings (or `vercel git connect`) for that workflow.
+- Newsletter feed source: howmomai Substack vs a dedicated Orienting Substack (mom-framed titles would surface on a de-mom'd site if the slug allowlist in script.js isn't kept up to date).
+- Coaching booking link (real form to replace the `hi@orienting.lu` mailto placeholder).
 - 中文 Workshop URL once the Chinese Maven course exists.
 - Dedicated Orienting OG image / logo mark.
