@@ -13,20 +13,24 @@ It is the de-gendered successor to How Mom AI (`howmomai.com`): same proven stat
 
 Positioning: a personal, credibility-first page, not a directory. It opens with Ting and her Amazon track record, then routes to the offers.
 
-### The spine and the ladder (locked)
-The through-line across everything: **"I think like a product manager, and I make AI build it."** Ten years as a Sr PM at Amazon is the moat – it's product judgment, which no prompt-hustler or bootcamp grad can fake. Every offer sits under that spine.
+### The spine (locked, superseded 2026-07-14)
+Original through-line: **"I think like a product manager, and I make AI build it."** Ten years as a Sr PM at Amazon was the moat, framed as product judgment. This is superseded by the compliance-risk spine below, but the ladder concept (entry wedge → core build offer → premium transformation) may still be worth mapping onto the new positioning — not yet re-derived.
 
-The three angles are not alternatives; they are altitudes on one ladder:
-1. **Work smarter with AI** (automate a task that eats your week) – entry wedge, widest funnel, easiest yes. Top of funnel.
+Original three-rung ladder for reference:
+1. **Work smarter with AI** (automate a task that eats your week) – entry wedge, widest funnel, easiest yes.
 2. **Build products end to end** (make the thing yourself, solo) – core promise, the flagship workshop.
-3. **Become an AI PM** (think and build like one) – premium transformation, highest willingness to pay, the natural home for 1:1 Coaching (career change is a 1:1 job).
+3. **Become an AI PM** (think and build like one) – premium transformation, highest willingness to pay, the natural home for 1:1 Coaching.
 
-Homepage **leads with the PM-who-builds spine** (decided by Ting). The ladder maps onto the offers block.
-
-### Hero message (locked)
-> I came from Taiwan and I build in Europe. I spent ten years as a product manager at Amazon and never wrote a line of code. Now I build products end to end myself, with AI, and I teach you to do the same.
+### Hero message (current, decided by Ting 2026-07-14)
+> Hi, I'm Ting. I spent a decade at Amazon European HQ in product, finance, and compliance risk, most recently advising European board members on marketplace risk exposure.
+>
+> I now help product leaders, founders, and compliance-minded operators ship AI features that work in the real world, under EU AI Act, GDPR, DSA, and beyond.
 
 中文 hero carries the same meaning in Ting's voice, opening on 「找到你的方向」 as the tagline.
+
+Meta/OG/twitter description tags on both `index.html` and `zh/index.html` have been updated to match (2026-07-14) — they're descriptive copy about Ting, not a product claim, so no offer decision was needed.
+
+**Still not reconciled with this pivot** (flagged, not changed): the offers block ("Two ways to build with me," Workshop/Coaching card copy framed around "build with AI, solo"), the proof section ("I build the things I teach"), and the nav's "About" link. Rewriting the offer cards means deciding whether the Workshop (Maven "build your second brain") and Coaching sessions themselves still teach solo-building, or have shifted toward shipping compliant AI features — that's a product-content decision, not a copy-alignment one. Left as-is until Ting decides.
 
 ---
 
@@ -114,6 +118,7 @@ A    www.orienting.lu    76.76.21.21
 | Separate `/` + `/zh/` URL paths (not JS text-swap) | Better SEO and quality for the Chinese pages |
 | Plain HTML/CSS/JS on Vercel | Max speed, no build step; same as How Mom AI |
 | Design in claude.ai/design first, then build | Design-first; `/design-sync` deferred until there's a real component library to sync (Phase 2) |
+| Replace PM-who-builds hero with compliance-risk hero (2026-07-14) | Ting-directed pivot toward the EU AI Act / GDPR / DSA compliance-for-AI-features positioning, closer to her original Orienting advisory identity than the solo-builder spine. Offers block, proof section, and meta tags not yet updated to match — see Open items. |
 
 ---
 
@@ -125,3 +130,4 @@ A    www.orienting.lu    76.76.21.21
 - Coaching booking link (real form to replace the `hi@orienting.lu` mailto placeholder).
 - 中文 Workshop URL once the Chinese Maven course exists.
 - Dedicated Orienting OG image / logo mark.
+- **Hero pivot follow-through (2026-07-14)**: hero and meta/OG/twitter tags now lead with compliance-risk positioning. Still open: offers block and proof section copy still speak the old PM-who-builds framing. Decide whether the Workshop/Coaching offers themselves have shifted toward "ship compliant AI features," or whether they still teach solo-building and just sit under a different hero.
