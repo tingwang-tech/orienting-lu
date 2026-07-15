@@ -21,14 +21,21 @@ Original three-rung ladder for reference:
 2. **Build products end to end** (make the thing yourself, solo) – core promise, the flagship workshop.
 3. **Become an AI PM** (think and build like one) – premium transformation, highest willingness to pay, the natural home for 1:1 Coaching.
 
-### Hero message (current, decided by Ting 2026-07-14)
-> Hi, I'm Ting. I spent a decade at Amazon European HQ in product, finance, and compliance risk, most recently advising European board members on marketplace risk exposure.
+### Hero message (current, decided by Ting 2026-07-15)
+> Hi, I'm Ting. I spent a decade at Amazon's European HQ, working across product, finance, and compliance risk. In my final role, I advised Amazon's own European board members on risk strategies. Before Amazon, I advised Fortune 500 companies at Deloitte and KPMG.
 >
-> I now help product leaders, founders, and compliance-minded operators ship AI features that work in the real world, under EU AI Act, GDPR, DSA, and beyond.
+> I now help product leaders, founders, and compliance-minded operators ship AI features that meet the EU AI Act, GDPR, and DSA. These are the strictest rules in the world for privacy, safety, and transparency. If your product survives Europe's rules, it will survive anywhere.
 
-中文 hero carries the same meaning in Ting's voice, opening on 「找到你的方向」 as the tagline.
+中文 (Ting's own translation, decided 2026-07-15):
+> 我在亞馬遜歐洲總部待了十年，職位橫跨產品、財務與合規風險領域。在最後的職位上，我負責向 Amazon 歐洲董事會提供風險策略建議。加入亞馬遜之前，我曾在德勤（Deloitte）和畢馬威（KPMG）為《財星》500強企業提供諮詢服務。
+>
+> 現在我協助產品負責人、創辦人，以及重視法遵的營運者，推出符合《歐盟人工智慧法案》（EU AI Act）、《一般資料保護條例》（GDPR）及《數位服務法》（DSA）的人工智慧功能。這些是全球最嚴格的隱私、安全與透明度法規。若您的產品能通過歐洲法規的考驗，便能在任何地方立足。
 
-Meta/OG/twitter description tags on both `index.html` and `zh/index.html` have been updated to match (2026-07-14) — they're descriptive copy about Ting, not a product claim, so no offer decision was needed.
+**Hero CTA dropped (2026-07-15):** the "Join the live workshop" button under the hero bio has been removed — subscribing to the newsletter is now the only CTA in the hero section. The nav's "Live Workshop" link and the announcement bar's workshop CTA are untouched.
+
+**Hero heading removed (2026-07-15):** the `hero__wordmark` ("Orienting") and `hero__tagline` ("# find your direction in AI" / 「找到你的方向」) lines have been removed from the hero section on both pages. The hero now opens directly on "Hi, I'm Ting." / 「嗨，我是 Ting。」. The wordmark still appears in the nav; the tagline no longer appears anywhere on the homepage.
+
+Meta/OG/twitter description tags on both `index.html` and `zh/index.html` still reflect the 2026-07-14 version of the hero (decade at Amazon, compliance risk, EU AI Act/GDPR/DSA) and have not yet been updated for the 2026-07-15 Deloitte/KPMG and "strictest rules" additions.
 
 **Still not reconciled with this pivot** (flagged, not changed): the offers block ("Two ways to build with me," Workshop/Coaching card copy framed around "build with AI, solo"), the proof section ("I build the things I teach"), and the nav's "About" link. Rewriting the offer cards means deciding whether the Workshop (Maven "build your second brain") and Coaching sessions themselves still teach solo-building, or have shifted toward shipping compliant AI features — that's a product-content decision, not a copy-alignment one. Left as-is until Ting decides.
 
