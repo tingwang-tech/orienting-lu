@@ -9,9 +9,9 @@ Read this before touching any code. It is the project's source of truth for cont
 `orienting.lu` is Ting's personal home as a solo AI builder, in **English and Traditional Chinese (中文)**.
 It is the de-gendered successor to How Mom AI (`howmomai.com`): same proven static-site structure and mechanics, rebranded around Ting herself. The "mom" framing gated people; this site drops it to reach the wider audience she sells to.
 
-**Primary job: conversion.** Two paid offers sit front and center — a live **Workshop** and **1:1 Coaching** — backed by proof that she ships real products (`tax.orienting.lu`, `school.orienting.lu`). The newsletter is the low-friction "stay in touch" action.
+**Primary job: conversion** — but as of 2026-07-15 the homepage itself carries almost none of that weight. It is a single-scroll credibility card (hero + newsletter subscribe) that hands off to the **nav** for everything else: Workshop, Coaching, Portfolio, Lux Events, About. See "Homepage minimalism" below.
 
-Positioning: a personal, credibility-first page, not a directory. It opens with Ting and her Amazon track record, then routes to the offers.
+Positioning: a personal, credibility-first page, not a directory. It opens with Ting and her Amazon track record, then lets the nav route to the offers.
 
 ### The spine (locked, superseded 2026-07-14)
 Original through-line: **"I think like a product manager, and I make AI build it."** Ten years as a Sr PM at Amazon was the moat, framed as product judgment. This is superseded by the compliance-risk spine below, but the ladder concept (entry wedge → core build offer → premium transformation) may still be worth mapping onto the new positioning — not yet re-derived.
@@ -37,7 +37,10 @@ Original three-rung ladder for reference:
 
 Meta/OG/twitter description tags on both `index.html` and `zh/index.html` still reflect the 2026-07-14 version of the hero (decade at Amazon, compliance risk, EU AI Act/GDPR/DSA) and have not yet been updated for the 2026-07-15 Deloitte/KPMG and "strictest rules" additions.
 
-**Still not reconciled with this pivot** (flagged, not changed): the offers block ("Two ways to build with me," Workshop/Coaching card copy framed around "build with AI, solo"), the proof section ("I build the things I teach"), and the nav's "About" link. Rewriting the offer cards means deciding whether the Workshop (Maven "build your second brain") and Coaching sessions themselves still teach solo-building, or have shifted toward shipping compliant AI features — that's a product-content decision, not a copy-alignment one. Left as-is until Ting decides.
+### Homepage minimalism (decided by Ting 2026-07-15)
+The offers block ("Two ways to build with me"), the proof section ("I build the things I teach"), and the newsletter RSS feed have been **removed entirely** from both homepages. The page now ends at the hero's subscribe box. Proof content moved to a new standalone `/portfolio` page (see Structure below) rather than being deleted — it still exists, just off the homepage.
+
+**Still not reconciled with this pivot** (flagged, not changed): `/coaching` and the Workshop/Coaching card copy that used to live in the offers block are still framed around "build with AI, solo" — that framing didn't get rewritten, it just moved out of view. Deciding whether Workshop/Coaching themselves have shifted toward "ship compliant AI features," or still teach solo-building under a different hero, remains open.
 
 ---
 
@@ -71,15 +74,18 @@ Copy is always written in Ting's voice — load VOICE.md before drafting a word.
 
 ---
 
-## Structure (planned)
+## Structure (current, 2026-07-15)
 
 - `/` (EN, default) and `/zh/` (中文), full mirror. `EN | 中文` toggle in nav on every page, linking to the sibling page.
-- **Homepage:** announcement bar · nav · hero (wordmark + tagline + credibility-first bio) · offers block (Workshop + Coaching) · proof (tax/school product cards) · newsletter feed (RSS) + subscribe · footer · cookie banner.
+- **Homepage:** announcement bar · nav · hero (credibility-first bio + newsletter subscribe) · footer · cookie banner. Nothing else — see "Homepage minimalism" above.
+- **Nav order (locked 2026-07-15):** Newsletter ↗ · Live Workshop · 1:1 Coaching · Portfolio · Lux Events ↗ · About ↗.
 - `/coaching` — coaching offer + Apply/Book CTA.
+- `/portfolio` — the former "Proof I ship" cards (tax.orienting.lu, school.orienting.lu), now a standalone page reachable only from the nav.
 - `/privacy` — privacy policy.
 - **Workshop** — nav links straight to Maven (single source of truth, no on-page page to go stale).
+- **Lux Events** — external link to Ting's Luma host profile (all events she runs, not a single event page).
 
-Reuse from How Mom AI wholesale: `script.js` (cookie gate + Substack RSS + hamburger + announcement), the cookie banner / subscribe-gate markup, and `style.css` as a base (swap palette + add wordmark/toggle/offers/proof styles).
+Reuse from How Mom AI wholesale: `script.js` (cookie gate + Substack RSS + hamburger + announcement — the RSS loader on `#newsletterCards` no-ops safely on pages without that element), the cookie banner / subscribe-gate markup, and `style.css` as a base (swap palette + add wordmark/toggle/offers/proof styles — `.offers` CSS is now unused dead weight in `style.css` since the offers block was deleted, not just moved).
 
 ---
 
@@ -93,8 +99,9 @@ Reuse from How Mom AI wholesale: `script.js` (cookie gate + Substack RSS + hambu
 | Workshop (EN CTA) | https://maven.com/ting/build-your-second-brain |
 | Workshop (中文 CTA) | TBD — Chinese Maven course not set up yet; points to build-your-second-brain until it exists |
 | Coaching booking | hi@orienting.lu (mailto placeholder) — TBD real booking link |
-| Newsletter feed | https://howmomai.substack.com/feed, filtered to Field Notes issues only via a slug allowlist in script.js (no category marker exists in the feed to filter automatically) |
-| Products (proof) | https://tax.orienting.lu (Railway) · https://school.orienting.lu (Vercel, separate project `lux-school-calendar`) |
+| Newsletter feed | https://howmomai.substack.com/feed, filtered to Field Notes issues only via a slug allowlist in script.js (no category marker exists in the feed to filter automatically) — no longer rendered on the homepage as of 2026-07-15, but the loader code is untouched |
+| Products (proof, now on `/portfolio`) | https://tax.orienting.lu (Railway) · https://school.orienting.lu (Vercel, separate project `lux-school-calendar`) |
+| Lux Events (nav) | https://luma.com/user/usr-sBGOoekdV7BDtQ0 — Ting's public Luma host profile, lists every event she runs. Found via "Hosted By" on any of her Luma event pages, e.g. https://luma.com/lo03rbn1 |
 | Template site | ~/Desktop/howmomai |
 
 ---
@@ -126,6 +133,9 @@ A    www.orienting.lu    76.76.21.21
 | Plain HTML/CSS/JS on Vercel | Max speed, no build step; same as How Mom AI |
 | Design in claude.ai/design first, then build | Design-first; `/design-sync` deferred until there's a real component library to sync (Phase 2) |
 | Replace PM-who-builds hero with compliance-risk hero (2026-07-14) | Ting-directed pivot toward the EU AI Act / GDPR / DSA compliance-for-AI-features positioning, closer to her original Orienting advisory identity than the solo-builder spine. Offers block, proof section, and meta tags not yet updated to match — see Open items. |
+| Cut homepage to hero + subscribe only; delete offers block, relocate proof to `/portfolio` (2026-07-15) | Ting wants a very clean, single-scroll hero page. The nav now carries the entire funnel instead of the page itself. |
+| Reorder nav to Newsletter, Live Workshop, 1:1 Coaching, Portfolio, Lux Events, About (2026-07-15) | Ting-directed reorder; Portfolio absorbs the old proof cards, Lux Events is new |
+| Lux Events links to Ting's Luma host profile, not a single event page (2026-07-15) | Ting wants one link that surfaces every event she runs, not just the one currently live (Lenny's Newsletter Meetup in Luxembourg) |
 
 ---
 
@@ -137,4 +147,6 @@ A    www.orienting.lu    76.76.21.21
 - Coaching booking link (real form to replace the `hi@orienting.lu` mailto placeholder).
 - 中文 Workshop URL once the Chinese Maven course exists.
 - Dedicated Orienting OG image / logo mark.
-- **Hero pivot follow-through (2026-07-14)**: hero and meta/OG/twitter tags now lead with compliance-risk positioning. Still open: offers block and proof section copy still speak the old PM-who-builds framing. Decide whether the Workshop/Coaching offers themselves have shifted toward "ship compliant AI features," or whether they still teach solo-building and just sit under a different hero.
+- **Hero pivot follow-through (2026-07-14/15)**: hero, meta/OG/twitter tags, and now the homepage structure itself lead with compliance-risk positioning. Still open: `/coaching` page copy and the Workshop's actual Maven content still speak the old solo-builder framing. Decide whether those offers have shifted toward "ship compliant AI features," or whether they still teach solo-building and just sit one click further from a different hero.
+- **Dead CSS**: `.offers` / `.offer-card` styles in `style.css` are now unused (the offers block was deleted, not relocated). Low priority cleanup.
+- Consider whether `/portfolio` deserves its own OG image/description distinct from the homepage's, now that it's a standalone destination instead of a homepage section.
