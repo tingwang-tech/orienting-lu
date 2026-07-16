@@ -93,7 +93,7 @@ Reuse from How Mom AI wholesale: `script.js` (cookie gate + Substack RSS + hambu
 
 | Thing | URL |
 |---|---|
-| Domain (target, DNS pending) | https://orienting.lu |
+| Domain (live) | https://orienting.lu |
 | Live deploy | https://orienting-lu.vercel.app |
 | Vercel project | tings-projects-447d45ab/orienting-lu |
 | Workshop (EN CTA) | https://maven.com/ting/build-your-second-brain |
@@ -111,14 +111,7 @@ Reuse from How Mom AI wholesale: `script.js` (cookie gate + Substack RSS + hambu
 
 GitHub-linked: pushes to `main` on `tingwang-tech/orienting-lu` auto-deploy via Vercel's Git integration (connected 2026-07-16 via `vercel git connect`). Manual `vercel deploy --prod` still works as a fallback but is no longer the primary path. Live now at the `.vercel.app` URL above.
 
-`orienting.lu` and `www.orienting.lu` are attached to this Vercel project, but **DNS is not yet pointed at Vercel** — the domain is registered through a third party (EuroDNS), and its current nameservers/records don't resolve to Vercel. The root domain will not go live until Ting adds this DNS record at the registrar:
-
-```
-A    orienting.lu    76.76.21.21
-A    www.orienting.lu    76.76.21.21
-```
-
-(This mirrors how `school.orienting.lu` already resolves to Vercel today — same pattern, one more record.)
+`orienting.lu` and `www.orienting.lu` are attached to this Vercel project, and **DNS is live** — confirmed resolving to Vercel (`76.76.21.21`) as of 2026-07-16, both root and `www` returning HTTP 200. The domain is registered through EuroDNS; the `A` records there point at Vercel (same pattern as `school.orienting.lu`).
 
 ---
 
@@ -139,12 +132,12 @@ A    www.orienting.lu    76.76.21.21
 | Lux Events links to Ting's Luma host profile, not a single event page (2026-07-15) | Ting wants one link that surfaces every event she runs, not just the one currently live (Lenny's Newsletter Meetup in Luxembourg) |
 | Replace placeholder `og-image.jpg` with real Orienting logo/favicon/OG image (2026-07-16) | The old file was a leftover How Mom AI template asset (orange "HOW MOM AI" wordmark), so social previews never showed Orienting branding regardless of DNS/deploy status. Built `logo.svg`, `favicon.svg`, and a brand-accurate `og-image.png` and wired them into meta tags on every EN/中文 page. |
 | Create `tingwang-tech/orienting-lu` on GitHub and connect it to Vercel (2026-07-16) | Moves off manual `vercel deploy` pushes to GitHub-linked auto-deploy on push to `main`, matching the How Mom AI workflow. Repo is public — codebase has no secrets (plain HTML/CSS/JS, no API keys). |
+| DNS confirmed live at EuroDNS (2026-07-16) | `orienting.lu` and `www.orienting.lu` resolve to Vercel; root domain is now the canonical live URL instead of the `.vercel.app` one. |
 
 ---
 
 ## Open items
 
-- **DNS**: add the `A` records above at the registrar (EuroDNS) to make `orienting.lu` live — the one step only Ting can do.
 - Newsletter feed source: howmomai Substack vs a dedicated Orienting Substack (mom-framed titles would surface on a de-mom'd site if the slug allowlist in script.js isn't kept up to date).
 - Coaching booking link (real form to replace the `hi@orienting.lu` mailto placeholder).
 - 中文 Workshop URL once the Chinese Maven course exists.
