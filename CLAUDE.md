@@ -103,12 +103,13 @@ Reuse from How Mom AI wholesale: `script.js` (cookie gate + Substack RSS + hambu
 | Products (proof, now on `/portfolio`) | https://tax.orienting.lu (Railway) · https://school.orienting.lu (Vercel, separate project `lux-school-calendar`) |
 | Lux Events (nav) | https://luma.com/user/usr-sBGOoekdV7BDtQ0 — Ting's public Luma host profile, lists every event she runs. Found via "Hosted By" on any of her Luma event pages, e.g. https://luma.com/lo03rbn1 |
 | Template site | ~/Desktop/howmomai |
+| GitHub repo | https://github.com/tingwang-tech/orienting-lu (public) |
 
 ---
 
 ## Deploy status
 
-Deployed via Vercel CLI directly (not yet via GitHub — see Open items). Live now at the `.vercel.app` URL above.
+GitHub-linked: pushes to `main` on `tingwang-tech/orienting-lu` auto-deploy via Vercel's Git integration (connected 2026-07-16 via `vercel git connect`). Manual `vercel deploy --prod` still works as a fallback but is no longer the primary path. Live now at the `.vercel.app` URL above.
 
 `orienting.lu` and `www.orienting.lu` are attached to this Vercel project, but **DNS is not yet pointed at Vercel** — the domain is registered through a third party (EuroDNS), and its current nameservers/records don't resolve to Vercel. The root domain will not go live until Ting adds this DNS record at the registrar:
 
@@ -136,17 +137,17 @@ A    www.orienting.lu    76.76.21.21
 | Cut homepage to hero + subscribe only; delete offers block, relocate proof to `/portfolio` (2026-07-15) | Ting wants a very clean, single-scroll hero page. The nav now carries the entire funnel instead of the page itself. |
 | Reorder nav to Newsletter, Live Workshop, 1:1 Coaching, Portfolio, Lux Events, About (2026-07-15) | Ting-directed reorder; Portfolio absorbs the old proof cards, Lux Events is new |
 | Lux Events links to Ting's Luma host profile, not a single event page (2026-07-15) | Ting wants one link that surfaces every event she runs, not just the one currently live (Lenny's Newsletter Meetup in Luxembourg) |
+| Replace placeholder `og-image.jpg` with real Orienting logo/favicon/OG image (2026-07-16) | The old file was a leftover How Mom AI template asset (orange "HOW MOM AI" wordmark), so social previews never showed Orienting branding regardless of DNS/deploy status. Built `logo.svg`, `favicon.svg`, and a brand-accurate `og-image.png` and wired them into meta tags on every EN/中文 page. |
+| Create `tingwang-tech/orienting-lu` on GitHub and connect it to Vercel (2026-07-16) | Moves off manual `vercel deploy` pushes to GitHub-linked auto-deploy on push to `main`, matching the How Mom AI workflow. Repo is public — codebase has no secrets (plain HTML/CSS/JS, no API keys). |
 
 ---
 
 ## Open items
 
 - **DNS**: add the `A` records above at the registrar (EuroDNS) to make `orienting.lu` live — the one step only Ting can do.
-- **GitHub repo**: not yet created. Current deploy is a direct Vercel CLI push (`vercel deploy`), not the GitHub-linked auto-deploy-on-push setup How Mom AI uses. Create `tingwang-tech/orienting-lu` on GitHub, then connect it in the Vercel project settings (or `vercel git connect`) for that workflow.
 - Newsletter feed source: howmomai Substack vs a dedicated Orienting Substack (mom-framed titles would surface on a de-mom'd site if the slug allowlist in script.js isn't kept up to date).
 - Coaching booking link (real form to replace the `hi@orienting.lu` mailto placeholder).
 - 中文 Workshop URL once the Chinese Maven course exists.
-- Dedicated Orienting OG image / logo mark.
 - **Hero pivot follow-through (2026-07-14/15)**: hero, meta/OG/twitter tags, and now the homepage structure itself lead with compliance-risk positioning. Still open: `/coaching` page copy and the Workshop's actual Maven content still speak the old solo-builder framing. Decide whether those offers have shifted toward "ship compliant AI features," or whether they still teach solo-building and just sit one click further from a different hero.
 - **Dead CSS**: `.offers` / `.offer-card` styles in `style.css` are now unused (the offers block was deleted, not relocated). Low priority cleanup.
 - Consider whether `/portfolio` deserves its own OG image/description distinct from the homepage's, now that it's a standalone destination instead of a homepage section.
