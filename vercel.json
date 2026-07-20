@@ -1,4 +1,14 @@
 {
   "cleanUrls": true,
-  "trailingSlash": false
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [
+        { "type": "host", "value": "newsletter.orienting.lu" }
+      ],
+      "destination": "https://howmomai.substack.com/:path*",
+      "statusCode": 301
+    }
+  ]
 }
