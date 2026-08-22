@@ -1,0 +1,59 @@
+# orienting.lu
+# Search and AI crawlers are welcome. Being readable and quotable by answer
+# engines is deliberate: people increasingly ask an assistant instead of
+# searching, and this site should be available as a source.
+
+User-agent: *
+Allow: /
+Disallow: /api/
+
+# Answer engines and AI crawlers, named explicitly so there is no ambiguity.
+User-agent: GPTBot
+Allow: /
+Disallow: /api/
+
+User-agent: OAI-SearchBot
+Allow: /
+Disallow: /api/
+
+User-agent: ChatGPT-User
+Allow: /
+Disallow: /api/
+
+User-agent: ClaudeBot
+Allow: /
+Disallow: /api/
+
+User-agent: Claude-Web
+Allow: /
+Disallow: /api/
+
+User-agent: Claude-SearchBot
+Allow: /
+Disallow: /api/
+
+User-agent: PerplexityBot
+Allow: /
+Disallow: /api/
+
+User-agent: Perplexity-User
+Allow: /
+Disallow: /api/
+
+User-agent: Google-Extended
+Allow: /
+Disallow: /api/
+
+User-agent: Applebot-Extended
+Allow: /
+Disallow: /api/
+
+User-agent: CCBot
+Allow: /
+Disallow: /api/
+
+User-agent: Bytespider
+Allow: /
+Disallow: /api/
+
+Sitemap: https://orienting.lu/sitemap.xml
