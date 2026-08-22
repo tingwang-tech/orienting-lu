@@ -8,8 +8,8 @@
 //   RESEND_API_KEY  required
 //   ENQUIRY_TO      optional, defaults to hi@orienting.lu
 //   ENQUIRY_FROM    optional, defaults to Resend's shared sender (needs no DNS records).
-//                   Switch to a verified orienting.lu sender once SPF/DKIM are settled
-//                   after the Google Workspace migration.
+//                   Switch to a verified orienting.lu sender after Resend's DNS
+//                   records are added without breaking the existing iCloud setup.
 
 const MAX_LENGTHS = {
   name: 200,

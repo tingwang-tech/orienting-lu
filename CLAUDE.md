@@ -17,7 +17,7 @@ The homepage serves two buyer paths:
 
 The site is shared through Ting's LinkedIn post and her word-of-mouth network, not through cold search. The typical visitor already knows her name or was just handed it. That gives the page three jobs, in order:
 
-1. **Make Ting referable.** The most common visitor is not the buyer, it is the person who might introduce the buyer. They need a sentence they can repeat and concrete "call Ting when X" triggers they will still recognise months later.
+1. **Make Ting referable.** Give visitors a clear description of the buyers she serves and the problems she handles.
 2. **Convert the qualified buyer** who does arrive, through the enquiry form.
 3. **Be citable by answer engines.** People increasingly ask an assistant instead of searching.
 
@@ -27,35 +27,30 @@ All three want the same thing: concrete, named, verifiable, plainly stated. Vagu
 
 Core promise:
 
-> Turn European rules into decisions your business can act on.
+> Turn European rules into your growth plan.
 
 Ting connects European requirements to product, partner, seller, team, and operating decisions. She does not sell legal opinions, tax filings, product testing, certifications, or registrations. She helps define and coordinate specialist work when it is needed.
 
 ## Offer architecture
 
-No prices and no timelines on the site.
-
-But name the three engagement shapes: **Diagnostic**, **Blueprint**, **Hands-on support**, one clause each. Naming nothing leaves a referrer with no vocabulary, and "she does consulting" is not a referral. Naming the shapes without pricing them gives them something repeatable while keeping scope a conversation.
-
-Do not write copy that announces the *absence* of packages. "No package before the problem is clear" was cut on 2026-08-22: it describes Ting's sales process, the reader does not care, and a referrer reads it as "she will not say what she sells."
+No prices, timelines, or generic engagement formats on the site. Lead with the buyer and the work. Scope follows the first conversation.
 
 ## Homepage structure
 
 1. Hero: outcome-led, with the credential strip **above the CTA buttons** so it lands in the first screen
 2. Two buyer paths, no per-card CTAs
-3. Three engagement shapes
-4. Experience, opening with "I am Tzu-Ting Wang"
-5. FAQ, eight question-shaped entries
-6. Enquiry form
-7. Footer with LinkedIn, Events, email, privacy
+3. Experience, opening with "I am Tzu-Ting Wang"
+4. FAQ, eight question-shaped entries
+5. Enquiry form
+6. Footer with LinkedIn, Events, email, privacy
 
-**Cut on 2026-08-22, do not reintroduce:** the "When this work helps" fit-signals section, the "No package before the problem is clear" three-step process, and the "Clear boundaries" disclaimer. All three described Ting's process or limits rather than the reader's situation. The boundaries content survives as an FAQ entry, which is where an objection belongs.
+**Cut, do not reintroduce:** the right-side hero diagram, referral-trigger copy, engagement-shape cards, process explanations, and negative-then-positive constructions. Keep the page direct and buyer-focused.
 
 There is no AI offer, workshop, newsletter, coaching offer, or portfolio navigation on the current site. Old coaching and portfolio routes redirect to the homepage.
 
 ## Proof
 
-- **Fifteen years** across product, risk and compliance. Do not say ten; ten is only the Amazon half
+- **15+ years** across product, risk and compliance. Do not say ten; ten is only the Amazon half
 - Ten years at Amazon's European headquarters across product, finance, and compliance risk
 - Marketplace compliance work across nine European marketplaces
 - Final Amazon role included advising European board members on risk strategy
@@ -72,7 +67,7 @@ The mechanics that make this work, all added 2026-08-22:
 - **Ting's full name in visible body copy**, not only the footer. Before this, "Tzu-Ting Wang" appeared once in a copyright line and models had nothing to resolve the page to a person.
 - **JSON-LD** in `index.html`: `ProfessionalService`, `Person` (with `alumniOf` and `sameAs` to LinkedIn and Luma), `WebSite`, and `FAQPage`. The FAQ answers are duplicated in full inside the `FAQPage` block, so a crawler gets the text even though the visible `<details>` are collapsed. The Chinese page is pending review and has not received this update.
 - **`robots.txt` explicitly allowing AI crawlers** (GPTBot, ClaudeBot, PerplexityBot, Google-Extended, CCBot and others). This is a deliberate opt-in.
-- **`sitemap.xml`** with hreflang alternates.
+- **`sitemap.xml`** listing only the ready English pages.
 - **Question-shaped H3s** in the FAQ, phrased the way someone would type them into an assistant.
 
 None of this guarantees citation. It removes the reasons a model would fail to cite her.
@@ -104,7 +99,7 @@ The regulatory FAQ answers were checked against current official EU sources on 2
 ## Technical setup
 
 - Static HTML, CSS, and JavaScript. **No build step and no `node_modules`** – keep it that way
-- English at `/`, Traditional Chinese at `/zh/`
+- English at `/`; `/zh/` temporarily redirects to English until the Chinese version is reviewed
 - Vercel hosting with clean URLs
 - Pushes to `main` auto-deploy through the GitHub connection
 - No analytics, tracking, or marketing cookies
@@ -123,7 +118,7 @@ Environment variables in Vercel:
 | `ENQUIRY_TO` | no | `hi@orienting.lu` |
 | `ENQUIRY_FROM` | no | Resend's shared `onboarding@resend.dev` sender |
 
-`ENQUIRY_FROM` defaults to Resend's shared sender **on purpose**: sending from `forms@orienting.lu` would need SPF and DKIM records at EuroDNS, and the existing SPF record (`v=spf1 include:icloud.com ~all`) must stay a single merged record or Ting's mail breaks. Mail is also moving from iCloud to Google Workspace, which rewrites SPF again. Verify the domain and switch the sender only after that migration settles.
+`ENQUIRY_FROM` defaults to Resend's shared sender **on purpose**. Sending from `forms@orienting.lu` requires Resend domain verification and its DNS records. The existing iCloud SPF and DKIM records must remain valid. Add Resend to the single merged SPF record rather than creating a second SPF record.
 
 **The Resend account must be registered to `hi@orienting.lu`.** Resend's shared `onboarding@resend.dev` sender can only deliver to the email address on the Resend account itself. Because `ENQUIRY_TO` is `hi@orienting.lu`, registering the account under any other address (a personal GitHub OAuth signup, for example) makes every submission fail with a 403 until a real domain is verified. This constraint disappears once `orienting.lu` is verified as a sending domain, not before.
 
@@ -142,5 +137,6 @@ Enquiries stay in `hi@orienting.lu`; do not forward them to a personal mailbox. 
 
 - **Ting's Chinese name.** The `/zh/` pages use the romanised "Tzu-Ting Wang" throughout because the correct characters were not known. Add them to the `zh` copy and to `alternateName` in the `zh` JSON-LD.
 - **Chinese copy review.** The `/zh/` page was drafted, not written by Ting. She reviews or rewrites it before it is treated as final.
+- **DMARC.** iCloud SPF and DKIM are present, but `_dmarc.orienting.lu` has no public record. Add and monitor DMARC before moving to an enforcement policy.
 - **No photo on the site.** For a solo practice shared into a personal network, a face helps.
 - **Regulatory FAQ maintenance.** Recheck the answers and source links when the underlying EU rules change.

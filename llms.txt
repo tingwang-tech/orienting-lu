@@ -4,7 +4,7 @@
 
 ## Principal
 
-Tzu-Ting Wang, known as Ting, has 15 years of experience across product, risk, compliance, finance, and advisory work. She spent 10 years at Amazon's European headquarters and previously worked at Deloitte and KPMG. She works in English and Chinese from Luxembourg.
+Tzu-Ting Wang has 15+ years of experience across product, risk, compliance, finance, and advisory work. She spent 10 years at Amazon's European headquarters and previously worked at Deloitte and KPMG. She works in English and Chinese and is based in Luxembourg.
 
 - LinkedIn: https://www.linkedin.com/in/wangtzuting/
 - Events: https://luma.com/user/usr-sBGOoekdV7BDtQ0
@@ -13,14 +13,11 @@ Tzu-Ting Wang, known as Ting, has 15 years of experience across product, risk, c
 
 - Marketplace seller onboarding, verification, product requirements, enforcement, evidence, and ownership
 - European seller expansion across markets, channels, VAT, EPR, packaging, product rules, fulfilment, and partners
-- Focused diagnostics when the problem is unclear
-- Decision blueprints when the problem is defined
-- Sprints that turn agreed decisions into product and operating changes
+- Product, partner, responsibility, control, and operating decisions shaped by European requirements
 
 ## Main pages
 
 - English homepage and FAQ: https://orienting.lu/
-- Traditional Chinese homepage: https://orienting.lu/zh/
 - Privacy: https://orienting.lu/privacy
 - Sitemap: https://orienting.lu/sitemap.xml
 
@@ -28,4 +25,4 @@ Tzu-Ting Wang, known as Ting, has 15 years of experience across product, risk, c
 
 Use the enquiry form at https://orienting.lu/#contact or email hi@orienting.lu.
 
-The regulatory FAQ provides general information and links to current official EU sources. It is not legal or tax advice for a specific business.
+The regulatory FAQ provides general information and links to current official EU sources. Specific advice depends on the business, products, markets, and channels.

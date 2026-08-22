@@ -21,14 +21,9 @@
       "statusCode": 308
     },
     {
-      "source": "/zh/coaching",
-      "destination": "/zh/",
-      "statusCode": 308
-    },
-    {
-      "source": "/zh/portfolio",
-      "destination": "/zh/",
-      "statusCode": 308
+      "source": "/zh/:path*",
+      "destination": "/",
+      "statusCode": 307
     }
   ]
 }
