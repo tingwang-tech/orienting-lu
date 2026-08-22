@@ -9,6 +9,26 @@
       ],
       "destination": "https://howmomai.substack.com/:path*",
       "statusCode": 301
+    },
+    {
+      "source": "/coaching",
+      "destination": "/",
+      "statusCode": 308
+    },
+    {
+      "source": "/portfolio",
+      "destination": "/",
+      "statusCode": 308
+    },
+    {
+      "source": "/zh/coaching",
+      "destination": "/zh/",
+      "statusCode": 308
+    },
+    {
+      "source": "/zh/portfolio",
+      "destination": "/zh/",
+      "statusCode": 308
     }
   ]
 }
