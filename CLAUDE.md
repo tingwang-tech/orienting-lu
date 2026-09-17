@@ -4,11 +4,11 @@ This file is the source of truth for the website's positioning and design.
 
 ## What this site does
 
-Orienting is Tzu-Ting Wang's advisory practice for scaling e-commerce businesses working across Europe.
+Orienting is Tzu-Ting Wang's advisory practice for businesses working through eCommerce and AI regulatory requirements, wherever they are based.
 
-The audience is global. The destination market is Europe.
+The audience is global. Ting's European experience is a credential, not a limit on where a buyer is based.
 
-The public category is scaling e-commerce businesses. Outreach can focus more narrowly on marketplaces and larger operators with product and operations teams.
+The public category is eCommerce and AI regulatory implementation. Outreach can focus more narrowly on marketplaces and larger operators with product and operations teams.
 
 ### Who actually visits (decided 2026-08-22)
 
@@ -24,11 +24,11 @@ All three want the same thing: concrete, named, verifiable, plainly stated. Vagu
 
 Core description:
 
-> Ting helps scaling e-commerce businesses turn European requirements into product decisions, operating processes and clear ownership across teams.
+> Ting helps businesses turn eCommerce and AI regulatory requirements into product decisions, operating processes and clear responsibilities.
 
 Referral sentence:
 
-> Talk to Ting when an e-commerce business is scaling across Europe and regulation is starting to slow growth or overload operations.
+> Talk to Ting when eCommerce or AI regulation is starting to slow a business's growth or overload its operations.
 
 ## Offer architecture
 
@@ -38,16 +38,18 @@ No prices, timelines, or generic engagement formats on the site. Lead with the b
 
 The homepage is one continuous mobile-first page:
 
-1. Personal introduction and relevant Amazon experience
-2. Three service areas
-3. Enquiry form
-4. Minimal footer
+1. Regulatory implementation headline and a contact call to action
+2. Personal introduction and relevant Amazon experience
+3. Three service areas
+4. Compact newsletter and community section
+5. Enquiry form
+6. Minimal footer
 
 Visitors can understand the offer and contact Ting by scrolling from top to bottom. The Resources link appears in navigation and opens a separate page. The Contact link scrolls to the homepage form.
 
 Keep the form as the primary contact path. Show `hi@orienting.lu` quietly below it as a trust signal and fallback.
 
-There is no AI offer, workshop, newsletter, coaching offer, or portfolio navigation on the current site. Old coaching and portfolio routes redirect to the homepage.
+The newsletter and community section supports the advisory offer. It has two links: the newsletter and upcoming events. Keep the main navigation focused on the consultancy offer. Old coaching and portfolio routes redirect to the homepage.
 
 ## Proof
 
@@ -134,7 +136,8 @@ Enquiries stay in `hi@orienting.lu`; do not forward them to a personal mailbox. 
 - Repository: https://github.com/tingwang-tech/orienting-lu
 - Contact: hi@orienting.lu
 - LinkedIn: https://www.linkedin.com/in/wangtzuting/
-- Events (Luma): https://luma.com/user/usr-sBGOoekdV7BDtQ0
+- Newsletter: https://twspace.substack.com/
+- Events (Luma): https://luma.com/user/ttwang
 
 ## Open items
 
