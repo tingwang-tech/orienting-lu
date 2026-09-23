@@ -342,8 +342,8 @@ p {
   overflow: hidden;
 }
 
-.submit-button {
-  width: 100%;
+.submit-button,
+.primary-button {
   min-height: 54px;
   padding: 14px 22px;
   color: #fff;
@@ -351,11 +351,37 @@ p {
   border: 0;
   border-radius: 2px;
   font-weight: 600;
+  line-height: 1.2;
   cursor: pointer;
 }
 
-.submit-button:hover {
+.submit-button:hover,
+.primary-button:hover {
+  color: #fff;
   background: var(--accent-dark);
+}
+
+.submit-button {
+  width: 100%;
+}
+
+.primary-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.primary-button:visited {
+  color: #fff;
+}
+
+.intro .primary-button {
+  margin-top: 8px;
+}
+
+.services .primary-button {
+  margin-top: 40px;
 }
 
 .submit-button[disabled] {
