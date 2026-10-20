@@ -40,7 +40,6 @@
         "@id": "https://orienting.lu/#organization",
         "name": "Orienting",
         "url": "https://orienting.lu/",
-        "email": "hi@orienting.lu",
         "description": "Independent advice from Ting Wang on turning eCommerce and AI regulatory requirements into product decisions, operating processes and clear responsibilities.",
         "founder": { "@id": "https://orienting.lu/#tzu-ting-wang" },
         "areaServed": { "@type": "Place", "name": "Worldwide" },
@@ -62,7 +61,6 @@
         "jobTitle": "Founder, Orienting",
         "worksFor": { "@id": "https://orienting.lu/#organization" },
         "url": "https://orienting.lu/",
-        "email": "hi@orienting.lu",
         "knowsLanguage": ["en", "zh"],
         "alumniOf": [
           { "@type": "Organization", "name": "Amazon" },
@@ -167,39 +165,23 @@
         <h2 id="contact-title">Have something in mind?</h2>
         <p class="contact__lede">Tell me what your business is trying to do and where it is getting stuck.</p>
 
-        <form class="enquiry" id="enquiryForm" method="post" action="/api/enquiry" novalidate>
-          <div class="enquiry__field">
-            <label for="name">Name</label>
-            <input type="text" id="name" name="name" autocomplete="name" required />
+        <div
+          class="consent-embed"
+          data-consent-src="https://docs.google.com/forms/d/e/1FAIpQLSd7MkLyf-q_8MC-sr6f8nqGX9sS1hpCyYgkQxh8uN-l9Clh0Q/viewform?embedded=true"
+          data-consent-title="Contact form"
+          data-consent-width="640"
+          data-consent-height="1320"
+          data-consent-scrolling="auto"
+        >
+          <div class="consent-fallback">
+            <p class="consent-fallback-note">The contact form is hosted by Google and loads here only after you accept. See the <a href="/privacy">privacy policy</a>.</p>
+            <p class="consent-fallback-actions">
+              <a href="https://docs.google.com/forms/d/e/1FAIpQLSd7MkLyf-q_8MC-sr6f8nqGX9sS1hpCyYgkQxh8uN-l9Clh0Q/viewform" target="_blank" rel="noopener">Open the form</a>
+              <button type="button" class="submit-button" data-consent-accept>Accept and load the form</button>
+            </p>
           </div>
-
-          <div class="enquiry__field">
-            <label for="email">Work email</label>
-            <input type="email" id="email" name="email" autocomplete="email" required />
-          </div>
-
-          <div class="enquiry__field">
-            <label for="company">Company or website <span>optional</span></label>
-            <input type="text" id="company" name="company" autocomplete="organization" />
-          </div>
-
-          <div class="enquiry__field">
-            <label for="message">What would you like help with?</label>
-            <textarea id="message" name="message" rows="6" required></textarea>
-          </div>
-
-          <p class="enquiry__privacy">I use what you send only to reply to you. See the <a href="/privacy">privacy policy</a>.</p>
-
-          <div class="enquiry__trap" aria-hidden="true">
-            <label for="website">Do not fill this in</label>
-            <input type="text" id="website" name="website" tabindex="-1" autocomplete="off" />
-          </div>
-
-          <button type="submit" class="submit-button" id="enquirySubmit">Send this to Ting</button>
-          <p class="enquiry__note">I usually reply within two working days.</p>
-          <p class="enquiry__fallback">Prefer email? <a href="mailto:hi@orienting.lu">hi@orienting.lu</a></p>
-          <p class="enquiry__status" id="enquiryStatus" role="status" aria-live="polite"></p>
-        </form>
+        </div>
+        <p class="enquiry__note">I usually reply within two working days.</p>
       </div>
     </section>
   </main>
@@ -216,5 +198,6 @@
   </footer>
 
   <script src="/script.js"></script>
+  <script src="/consent.js"></script>
 </body>
 </html>
