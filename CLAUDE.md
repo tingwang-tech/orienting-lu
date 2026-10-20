@@ -47,7 +47,7 @@ The homepage is one continuous mobile-first page:
 
 Visitors can understand the offer and contact Ting by scrolling from top to bottom. The Resources link appears in navigation and opens a separate page. The Contact link scrolls to the homepage form.
 
-Keep the form as the primary contact path. Show `hi@orienting.lu` quietly below it as a trust signal and fallback.
+The Google Form is the only contact route on the site. Do not publish an email address.
 
 The newsletter and community section supports the advisory offer. It has two links: the newsletter and upcoming events. Keep the main navigation focused on the consultancy offer. Old coaching and portfolio routes redirect to the homepage.
 
@@ -117,7 +117,7 @@ The homepage contact section embeds Ting's Google Form, the same form as tzuting
 
 This site has no site-wide cookie banner. `consent.js` gates this embed only. Before consent, the page shows an "Open the form" link and an "Accept and load the form" button. The iframe is created only after accept. The choice is stored in localStorage under `orienting-consent`.
 
-`api/enquiry.mjs` is retained and unused. Do not delete it, or its Vercel environment variables, until that removal is deliberate. It is a Vercel serverless function that used to relay the old form to `hi@orienting.lu` via Resend's REST API. It calls `fetch` directly rather than using the Resend SDK, which is why there is still no `package.json` and no dependency install. The `.mjs` extension is what makes Vercel treat it as an ES module without a `"type": "module"` package file.
+`api/enquiry.mjs` is retained and unused. Do not delete it, or its Vercel environment variables, until that removal is deliberate. It is a Vercel serverless function that used to relay the old form to the inbox in `ENQUIRY_TO` via Resend's REST API. It calls `fetch` directly rather than using the Resend SDK, which is why there is still no `package.json` and no dependency install. The `.mjs` extension is what makes Vercel treat it as an ES module without a `"type": "module"` package file.
 
 Nothing is stored server-side. The message is relayed and dropped. A honeypot field named `website` catches bots; a filled honeypot returns 200 so the bot learns nothing.
 
@@ -126,21 +126,21 @@ Environment variables in Vercel:
 | Variable | Required | Default |
 |---|---|---|
 | `RESEND_API_KEY` | yes | – |
-| `ENQUIRY_TO` | no | `hi@orienting.lu` |
+| `ENQUIRY_TO` | no | the business inbox |
 | `ENQUIRY_FROM` | no | Resend's shared `onboarding@resend.dev` sender |
 
 `ENQUIRY_FROM` defaults to Resend's shared sender **on purpose**. Sending from `forms@orienting.lu` requires Resend domain verification and its DNS records. The existing iCloud SPF and DKIM records must remain valid. Add Resend to the single merged SPF record rather than creating a second SPF record.
 
-**The Resend account must be registered to `hi@orienting.lu`.** Resend's shared `onboarding@resend.dev` sender can only deliver to the email address on the Resend account itself. Because `ENQUIRY_TO` is `hi@orienting.lu`, registering the account under any other address (a personal GitHub OAuth signup, for example) makes every submission fail with a 403 until a real domain is verified. This constraint disappears once `orienting.lu` is verified as a sending domain, not before.
+**The Resend account must be registered to the same address as `ENQUIRY_TO`.** Resend's shared `onboarding@resend.dev` sender can only deliver to the email address on the Resend account itself. Registering the account under any other address (a personal GitHub OAuth signup, for example) makes every submission fail with a 403 until a real domain is verified. This constraint disappears once `orienting.lu` is verified as a sending domain, not before.
 
-Enquiries stay in `hi@orienting.lu`; do not forward them to a personal mailbox. Replies should come from the business address, and the privacy policy commits to a retention period that is hard to honour across a personal inbox.
+Enquiries stay in that inbox; do not forward them to a personal mailbox. Replies should come from the business address, and the privacy policy commits to a retention period that is hard to honour across a personal inbox.
 
 ## Key URLs
 
 - Live: https://orienting.lu
 - Vercel: https://orienting-lu.vercel.app
 - Repository: https://github.com/tingwang-tech/orienting-lu
-- Contact: hi@orienting.lu
+- Contact: https://orienting.lu/#contact
 - LinkedIn: https://www.linkedin.com/in/wangtzuting/
 - Newsletter: https://twspace.substack.com/
 - Events (Luma): https://luma.com/user/ttwang
