@@ -111,7 +111,13 @@ The regulatory FAQ answers were checked against current official EU sources on 2
 
 ### Enquiry form
 
-`api/enquiry.mjs` is a Vercel serverless function that relays the form to `hi@orienting.lu` via Resend's REST API. It calls `fetch` directly rather than using the Resend SDK, which is why there is still no `package.json` and no dependency install. The `.mjs` extension is what makes Vercel treat it as an ES module without a `"type": "module"` package file.
+The homepage contact section embeds Ting's Google Form, the same form as tzuting.com:
+
+`https://docs.google.com/forms/d/e/1FAIpQLSd7MkLyf-q_8MC-sr6f8nqGX9sS1hpCyYgkQxh8uN-l9Clh0Q/viewform?embedded=true`
+
+This site has no site-wide cookie banner. `consent.js` gates this embed only. Before consent, the page shows an "Open the form" link and an "Accept and load the form" button. The iframe is created only after accept. The choice is stored in localStorage under `orienting-consent`.
+
+`api/enquiry.mjs` is retained and unused. Do not delete it, or its Vercel environment variables, until that removal is deliberate. It is a Vercel serverless function that used to relay the old form to `hi@orienting.lu` via Resend's REST API. It calls `fetch` directly rather than using the Resend SDK, which is why there is still no `package.json` and no dependency install. The `.mjs` extension is what makes Vercel treat it as an ES module without a `"type": "module"` package file.
 
 Nothing is stored server-side. The message is relayed and dropped. A honeypot field named `website` catches bots; a filled honeypot returns 200 so the bot learns nothing.
 

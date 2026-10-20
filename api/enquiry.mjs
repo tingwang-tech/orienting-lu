@@ -1,5 +1,9 @@
 // Enquiry form handler for orienting.lu.
 //
+// Retained unused. The homepage no longer posts here. Contact is a
+// consent-gated Google Form embed. Leave this function and its Vercel
+// environment variables in place until they are removed on purpose.
+//
 // Posts the contact form to Resend's REST API, which forwards it to Ting's inbox.
 // Uses fetch directly rather than the Resend SDK so the site keeps its no-build-step,
 // no-node_modules property. Nothing is stored here; the message is relayed and dropped.
